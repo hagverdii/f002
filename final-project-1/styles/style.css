@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "DM Sans", sans-serif;
+}
+
+.section {
+  padding: 14px;
+}
+
+.base-btn, .filled-btn {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.filled-btn {
+  background-color: #109932;
+  color: white;
+}
+
+.outlined-btn {
+  border: 1px solid #109932;
+  color: #109932;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #0F1747;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: black;
+}
+
+.header-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  background-color: #183E54;
+  padding: 22px 60px;
+}
+.header-top-logo {
+  width: 188px;
+}
+.header-top-contact {
+  font-size: 1rem;
+  color: white;
+}
+.header-top-flag {
+  margin-left: auto;
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  object-position: center;
+}
+.header-top-search {
+  font-size: 27px;
+  color: white;
+}
+.header-top-hamburger {
+  font-size: 27px;
+  color: white;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 14px;
+  }
+  .header-top {
+    padding: 44px 16px;
+  }
+  .header-top-contact {
+    display: none;
+  }
+  .header-top-contact {
+    display: none;
+  }
+  .header-top-btn-group {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

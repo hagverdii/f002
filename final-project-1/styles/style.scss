@@ -1,0 +1,120 @@
+@use '_variables.scss' as *;
+@use '_mixins.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "DM Sans", sans-serif;
+}
+
+// DEFAULT CLASSES FOR COMPONENTS-------------------------------------
+
+
+// SECTION
+.section {
+  padding: 14px;
+}
+
+// BUTTONS
+.base-btn {
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.filled-btn {
+  @extend .base-btn;
+  background-color: $button-filled-bg-color;
+  color: white;
+}
+
+.outlined-btn {
+  border: 1px solid $button-outlined-border-color;
+  color: $button-outlined-text-color
+}
+
+.btn-group {
+  @include flex(row, space-between, center, 30px);
+}
+
+// TEXTS
+.section-title {
+  font-size: 2.5rem;
+  color: $section-title-text-color;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: black;
+}
+
+// -------------------------------------------------------------------
+.header {
+  &-top {
+    @include flex(row, flex-start, center, 30px);
+    background-color: $header-bg-color;
+    padding: 22px 60px;
+
+    &-logo {
+      width: 188px;
+    }
+
+    &-contact {
+      font-size: 1rem;
+      color: white;
+    }
+
+    &-flag {
+      margin-left: auto;
+      width: 28px;
+      height: 28px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &-search {
+      font-size: 27px;
+      color: white;
+    }
+
+    &-hamburger {
+      font-size: 27px;
+      color: white;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 14px;
+  }
+
+  .header {
+    &-top {
+      padding: 44px 16px;
+
+      &-contact {
+        display: none;
+      }
+
+      &-contact {
+        display: none;
+      }
+
+      &-btn-group {
+        display: none;
+      }
+    }
+  }
+}
