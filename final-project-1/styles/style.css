@@ -86,8 +86,10 @@ section {
   margin-left: auto;
   width: 28px;
   height: 28px;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .header-top-search {
   font-size: 27px;
@@ -139,6 +141,9 @@ section {
   border: none;
   font-size: 1.1rem;
 }
+.header-bottom-search-container input::-moz-placeholder {
+  color: #c0c0c0;
+}
 .header-bottom-search-container input::placeholder {
   color: #c0c0c0;
 }
@@ -154,8 +159,10 @@ section {
 .hero-section img {
   width: 49px;
   height: 49px;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   position: absolute;
   bottom: 30px;
   right: 60px;
@@ -180,8 +187,10 @@ section {
   border-radius: 20px;
   aspect-ratio: 2/1;
   width: 55%;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .main-section .section-1 {
   background: linear-gradient(rgba(97, 144, 232, 0.2), rgba(167, 191, 232, 0.1019607843));
@@ -244,6 +253,45 @@ section {
   width: 170px;
 }
 
+.coverage-section {
+  width: 100%;
+  height: 700px;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+.coverage-section-left-container {
+  width: 40%;
+  background: #0b1420;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+  color: white;
+  padding: 90px 74px;
+}
+.coverage-section-left-container h3 {
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+.coverage-section-left-container p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.coverage-section img {
+  height: 700px;
+  width: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
 @media screen and (max-width: 1024px) {
   body {
     font-size: 14px;
@@ -275,6 +323,10 @@ section {
   .main-section .section img {
     width: 90%;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+  .coverage-section-left-container {
+    display: none;
+  }
+  .coverage-section img {
+    flex: 1;
+  }
+}/*# sourceMappingURL=style.css.map */

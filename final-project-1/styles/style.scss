@@ -257,6 +257,39 @@ section {
   }
 }
 
+.coverage-section {
+  width: 100%;
+  height: 700px;
+  padding: 0;
+  @include flex(row, space-between, center, 0);
+
+  &-left-container {
+    width: 40%;
+    background: #0b1420;
+    height: 100%;
+    @include flex(column, flex-start, flex-start, 30px);
+    color: white;
+    padding: 90px 74px;
+
+    h3 {
+      font-size: 3.2rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+
+  img {
+    height: 700px;
+    width: 60%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   body {
     font-size: 14px;
@@ -305,6 +338,16 @@ section {
       img {
         width: 90%;
       }
+    }
+  }
+
+  .coverage-section {
+    &-left-container {
+      display: none;
+    }
+
+    img {
+      flex: 1;
     }
   }
 }
