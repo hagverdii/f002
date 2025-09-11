@@ -86,10 +86,8 @@ section {
   margin-left: auto;
   width: 28px;
   height: 28px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 .header-top-search {
   font-size: 27px;
@@ -141,9 +139,6 @@ section {
   border: none;
   font-size: 1.1rem;
 }
-.header-bottom-search-container input::-moz-placeholder {
-  color: #c0c0c0;
-}
 .header-bottom-search-container input::placeholder {
   color: #c0c0c0;
 }
@@ -159,10 +154,8 @@ section {
 .hero-section img {
   width: 49px;
   height: 49px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   position: absolute;
   bottom: 30px;
   right: 60px;
@@ -187,10 +180,8 @@ section {
   border-radius: 20px;
   aspect-ratio: 2/1;
   width: 55%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 .main-section .section-1 {
   background: linear-gradient(rgba(97, 144, 232, 0.2), rgba(167, 191, 232, 0.1019607843));
@@ -229,6 +220,30 @@ section {
   width: 100%;
 }
 
+.brands-section {
+  padding: 100px 14px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+.brands-section-img-container {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  overflow: auto;
+}
+.brands-section-img-container img {
+  width: 170px;
+}
+
 @media screen and (max-width: 1024px) {
   body {
     font-size: 14px;
@@ -260,4 +275,6 @@ section {
   .main-section .section img {
     width: 90%;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
