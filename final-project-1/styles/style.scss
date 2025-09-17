@@ -424,6 +424,100 @@ section {
   }
 }
 
+.footer {
+  width: 100%;
+  background: white;
+  padding: 60px;
+  border-top: 1px solid #e5e5e5;
+
+  &-top {
+    @include flex(row, flex-start, flex-start, 60px);
+    flex-wrap: wrap;
+
+    .footer-logo {
+      width: 180px;
+      margin-right: 60px;
+    }
+
+    .footer-links {
+      flex: 1;
+      @include flex(row, flex-start, flex-start, 40px);
+      flex-wrap: wrap;
+
+      .footer-column {
+        min-width: 150px;
+
+        h4 {
+          font-size: 1rem;
+          font-weight: 600;
+          margin-bottom: 16px;
+        }
+
+        ul {
+          list-style: none;
+
+          li {
+            margin-bottom: 10px;
+
+            a {
+              font-size: 0.95rem;
+              color: $navlink-text-color;
+              text-decoration: none;
+              transition: color 0.2s ease;
+
+              &:hover {
+                color: $button-filled-bg-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-middle {
+    margin: 50px 0;
+    padding: 20px 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    @include flex(row, center, center, 40px);
+    flex-wrap: wrap;
+
+    .brand {
+      width: 100px;
+      height: 50px;
+      background: black;
+      opacity: 0.2;
+      border-radius: 4px;
+    }
+  }
+
+  &-bottom {
+    @include flex(row, space-between, center, 20px);
+    flex-wrap: wrap;
+
+    p {
+      font-size: 0.9rem;
+      color: #808080;
+    }
+
+    .footer-socials {
+      @include flex(row, flex-start, center, 20px);
+
+      i {
+        font-size: 20px;
+        color: #333;
+        cursor: pointer;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: $button-filled-bg-color;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1024px) {
   body {
     font-size: 14px;
@@ -482,6 +576,35 @@ section {
 
     img {
       flex: 1;
+    }
+  }
+
+  .footer {
+    padding: 40px 20px;
+
+    &-top {
+      flex-direction: column;
+      gap: 30px;
+
+      .footer-logo {
+        margin: 0 auto;
+      }
+    }
+
+    &-middle {
+      justify-content: center;
+      gap: 20px;
+
+      .brand {
+        flex: 1 1 40%;
+        max-width: 120px;
+      }
+    }
+
+    &-bottom {
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: 20px;
     }
   }
 }
