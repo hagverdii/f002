@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb812094-26f4-4d9e-9a77-17e9ac89e49f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/final-project-1/assets/brand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/final-project-1/assets/logo2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project-1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/final-project-1/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project-1/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/final-project-1/styles/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final-project-1/styles/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/final-project-1/styles/style.css.map" afterDir="false" />
@@ -83,7 +84,8 @@
       <option name="presentableId" value="Default" />
       <updated>1757334533280</updated>
       <workItem from="1757334534412" duration="5828000" />
-      <workItem from="1757593281744" duration="628000" />
+      <workItem from="1757593281744" duration="1851000" />
+      <workItem from="1758005576684" duration="3221000" />
     </task>
     <servers />
   </component>
