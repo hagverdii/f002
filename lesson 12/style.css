@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100vh;
+}
+/* 
+button {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+aside {
+  width: 300px;
+  flex: 1;
+  background-color: blue;
+}
+
+.hide-element {
+  display: none; */
+/* } */

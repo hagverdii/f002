@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url("assets/banner.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.nav-button {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+aside {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  background: white;
+  transition: all 0.25s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-input {
+    padding: 0.5rem 1rem;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 1.2rem;
+
+    li {
+      cursor: pointer;
+    }
+  }
+}
+
+.hide-sidebar {
+  visibility: hidden;
+  transform: translateX(-300px);
+}
+
+main {
+  color: white;
+  margin-top: 9rem;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-weight: bold;
+    font-size: 4rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  button {
+    padding: 1rem 2rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+  }
+}
