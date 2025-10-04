@@ -1,0 +1,34 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem;
+}
+
+button {
+  padding: 1rem 2rem;
+}
+
+.color-box {
+  margin-top: 1rem;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+.red-btn {
+  background: red;
+}
+
+.green-btn {
+  background: green;
+}
+
+.blue-btn {
+  background: blue;
+}

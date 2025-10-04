@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem;
+}
+
+button {
+  padding: 1rem 2rem;
+}
+
+p {
+  margin-top: 1rem;
+}
+
+.hide-element {
+  display: none;
+}
