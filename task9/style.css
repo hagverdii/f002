@@ -11,67 +11,60 @@ body {
   display: grid;
   place-content: center;
   height: 100vh;
+  font-family: sans-serif;
 }
 
 .image-slider-container {
   width: 500px;
   aspect-ratio: 16/9;
   position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
 
-  .slider-images {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    position: relative;
-    overflow: hidden;
+.slider-images {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}
 
-    img {
-      width: 500px;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 15px;
-    }
+.slider-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
 
-    #slider-left-button {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+#slider-left-button,
+#slider-right-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.3s, transform 0.2s;
+}
 
-    #slider-right-button {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  }
+#slider-left-button:hover,
+#slider-right-button:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateY(-50%) scale(1.1);
+}
 
-  button {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    padding: 0.5rem;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: all 0.25s;
-    color: white;
-    font-weight: bold;
-    margin-inline: 0.5rem;
-  }
+#slider-left-button {
+  left: 10px;
+}
 
-  button:hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  .slider-radio-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    button {
-      color: black;
-    }
-  }
+#slider-right-button {
+  right: 10px;
 }
