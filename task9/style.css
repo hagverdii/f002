@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: mistyrose;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.image-slider-container {
+  width: 500px;
+  aspect-ratio: 16/9;
+  position: relative;
+
+  .slider-images {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 500px;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 15px;
+    }
+
+    #slider-left-button {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #slider-right-button {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.25s;
+    color: white;
+    font-weight: bold;
+    margin-inline: 0.5rem;
+  }
+
+  button:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .slider-radio-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      color: black;
+    }
+  }
+}

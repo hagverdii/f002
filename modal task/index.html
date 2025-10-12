@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="openModalBtn">Open Modal</button>
+
+    <div class="modal hidden" id="myModal">
+      <div class="modal-content">
+        <button class="close" id="closeModalBtn">×</button>
+        <h3>Sure you want to accept?</h3>
+        <p>Write your name</p>
+        <input type="text" id="nameInput" placeholder="Your Name" /><br />
+        <div class="buttons-group">
+          <button id="cancelBtn">No, cancel</button>
+          <button id="confirmBtn">Yes, confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/7a6f5a72c4.js" crossorigin="anonymous"></script>
+  </body>
+</html>
