@@ -1,36 +1,30 @@
-let firstNameInput = document.getElementById("firstNameInput");
-let lastNameInput = document.getElementById("lastNameInput");
-let createUserForm = document.getElementById("createUserForm");
+let startTimerBtn = document.getElementById("start_timer_btn");
+let stopTimerBtn = document.getElementById("stop_timer_btn");
+let resetTimerBtn = document.getElementById("reset_timer_btn");
+let timerText = document.getElementById("timer_text");
 
-let usersCreated = [];
+let timerInterval;
+let timerCounter = 0;
 
-function User(firstName, lastName) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-}
+startTimerBtn.addEventListener("click", () => {
+  clearInterval(timerInterval);
 
-createUserForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let firstName = firstNameInput.value;
-  let lastName = lastNameInput.value;
-  const newUser = new User(firstName, lastName);
-  usersCreated.push(newUser);
-  firstNameInput.value = "";
-  lastNameInput.value = "";
-  console.log(usersCreated);
+  timerInterval = setInterval(() => {
+    timerCounter += 1;
+    timerText.textContent = timerCounter;
+  }, 1000);
 });
 
-var removeDuplicates = function (nums) {
-  let count = 0;
-  for (let i = 0; i < nums.length - 1; i++) {
-    if (nums[i] === nums[i + 1]) {
-      count++;
-      nums.splice(i, 1);
-      i--;
-    }
-  }
-  console.log(nums, count);
-  return count;
-};
+stopTimerBtn.addEventListener("click", () => {
+  clearInterval(timerInterval);
+});
 
-removeDuplicates([1, 1, 2]);
+resetTimerBtn.addEventListener("click", () => {
+  resetTimer();
+});
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  timerCounter = 0;
+  timerText.textContent = timerCounter;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="accordion" id="accordion">
+      <div class="item">
+        <button class="heading-btn" id="heading-1">
+          Section 1
+          <span class="chev" aria-hidden="true">▶</span>
+        </button>
+        <div class="panel" id="panel-1" role="region" aria-labelledby="heading-1">
+          Content for section 1. Put whatever you like here.
+        </div>
+      </div>
+
+      <div class="item">
+        <button class="heading-btn" id="heading-2">
+          Section 2
+          <span class="chev" aria-hidden="true">▶</span>
+        </button>
+        <div class="panel" id="panel-2" role="region" aria-labelledby="heading-2">
+          Content for section 2. Short and sweet.
+        </div>
+      </div>
+
+      <div class="item">
+        <button class="heading-btn" id="heading-3">
+          Section 3
+          <span class="chev" aria-hidden="true">▶</span>
+        </button>
+        <div class="panel" id="panel-3" role="region" aria-labelledby="heading-3">
+          Content for section 3. That's it!
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/7a6f5a72c4.js" crossorigin="anonymous"></script>
+  </body>
+</html>
