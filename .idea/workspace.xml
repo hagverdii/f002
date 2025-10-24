@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb812094-26f4-4d9e-9a77-17e9ac89e49f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/final-project-1/assets/logo2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project-1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/final-project-1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project-1/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/final-project-1/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project-1/styles/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/final-project-1/styles/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final-project-1/styles/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/final-project-1/styles/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accordion/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/accordion/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accordion/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/accordion/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accordion/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/accordion/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,26 +29,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/MyProjects/f002&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JavaScript Debug.index.html.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/MyProjects/f002",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\MyProjects\f002" />
@@ -85,7 +84,9 @@
       <updated>1757334533280</updated>
       <workItem from="1757334534412" duration="5828000" />
       <workItem from="1757593281744" duration="1851000" />
-      <workItem from="1758005576684" duration="3221000" />
+      <workItem from="1758005576684" duration="8669000" />
+      <workItem from="1758781597316" duration="600000" />
+      <workItem from="1761305714711" duration="1027000" />
     </task>
     <servers />
   </component>
