@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>İşçi İdarəetmə Sistemi</h1>
+
+    <div class="form-box">
+        <h2>Yeni İşçi Əlavə Et</h2>
+        <form id="employeeForm">
+            <input type="text" id="fullName" placeholder="Ad və Soyad" required minlength="3" maxlength="50"/>
+            <input type="number" id="age" placeholder="Yaş" min="18" max="65" required/>
+            <input type="text" id="position" placeholder="Vəzifə" required minlength="2" maxlength="30"/>
+            <button type="submit" class="btn-blue">Əlavə Et</button>
+        </form>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Ad və Soyad</th>
+            <th>Yaş</th>
+            <th>Vəzifə</th>
+            <th>Əməliyyatlar</th>
+        </tr>
+        </thead>
+        <tbody id="employeeTable"></tbody>
+    </table>
+</div>
+
+<script src="script.js"></script>
+<script src="https://kit.fontawesome.com/7a6f5a72c4.js" crossorigin="anonymous"></script>
+</body>
+</html>
