@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="get-data-btn">Get Data</button>
+    <button id="create-user-btn">Create User</button>
+    <input type="number" id="user-id-input" placeholder="User id" />
+    <table id="users-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody id="users-table-body"></tbody>
+    </table>
+
+    <div class="create-user-modal">
+      <form class="create-user-form">
+        <input type="text" id="username-input" placeholder="username" />
+        <input type="email" id="email-input" placeholder="email" />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/7a6f5a72c4.js" crossorigin="anonymous"></script>
+  </body>
+</html>
