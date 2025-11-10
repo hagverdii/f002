@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h2>Tələbə Qeydiyyat Sistemi</h2>
+      <div>
+        <button id="light-mode-btn">Light</button>
+        <button id="dark-mode-btn">Dark</button>
+      </div>
+    </header>
+    <main>
+      <div>
+        <input type="text" id="search-input" placeholder="Ad, Soyad və Qrup üzrə axtar..." />
+        <select>
+          <option value="1">A-Z</option>
+          <option value="2">Z-A</option>
+        </select>
+      </div>
+      <form id="add-student-form">
+        <input type="text" id="name-input" placeholder="Ad" />
+        <input type="text" id="surname-input" placeholder="Soyad" />
+        <input type="text" id="group-input" placeholder="Qrup (məs: 11A)" />
+        <button type="submit">Əlavə et</button>
+      </form>
+
+      <ul id="students-list"></ul>
+    </main>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/7a6f5a72c4.js" crossorigin="anonymous"></script>
+  </body>
+</html>
