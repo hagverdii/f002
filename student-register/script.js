@@ -16,9 +16,11 @@ function renderDarkModeButton() {
   if (darkMode) {
     darkModeBtn.classList.add("hide-element");
     lightModeBtn.classList.remove("hide-element");
+    document.body.classList.add("dark");
   } else {
     darkModeBtn.classList.remove("hide-element");
     lightModeBtn.classList.add("hide-element");
+    document.body.classList.remove("dark");
   }
 }
 
@@ -44,7 +46,9 @@ addStudentForm.addEventListener("submit", (e) => {
 searchInput.addEventListener("input", (e) => {
   if (e.target.value) {
     const filteredStudentsList = studentsList.filter((student) =>
-      student.name.toLowerCase().includes(e.target.value.toLowerCase())
+      (student.name.toLowerCase() + student.surname.toLowerCase() + student.group.toLowerCase()).includes(
+        e.target.value.toLowerCase()
+      )
     );
     displayStudentsList = filteredStudentsList;
   } else {

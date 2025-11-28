@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Geist:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+
+body,
+body.light {
+  background: #fbfcfd;
+}
+
+body.dark {
+  background-color: #010203;
+  color: white;
+
+  i.fa-sun {
+    color: white;
+  }
+}
+
+.page-container {
+  font-family: "Geist", sans-serif;
+  max-width: 1200px;
+  padding: 2.5rem;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  #theme-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 0 5px gray;
+    background: transparent;
+
+    &:hover {
+      background-color: lightsteelblue;
+      cursor: pointer;
+    }
+  }
+}
