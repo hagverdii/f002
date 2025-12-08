@@ -1,0 +1,33 @@
+.new-todo-input {
+  padding: 0.4rem 1rem;
+}
+
+.new-todo-btn {
+  padding: 0.4rem 1rem;
+}
+
+.todo-items {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  padding: 0.4rem 1rem;
+}
+
+.edit-todo-btn {
+  background: lightgreen;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  border: none;
+}

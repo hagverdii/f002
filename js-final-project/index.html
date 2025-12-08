@@ -15,6 +15,54 @@
         </div>
         <button id="theme-btn"><i class="fa-regular fa-moon"></i></button>
       </header>
+      <section class="stats">
+        <div class="stat-card total">
+          <p class="title">Ümumi Tapşırıq</p>
+          <h2 class="count">0</h2>
+          <div class="icon-wrap">
+            <i class="fa-regular fa-circle icon"></i>
+          </div>
+        </div>
+
+        <div class="stat-card active">
+          <p class="title">Aktiv</p>
+          <h2 class="count">0</h2>
+          <div class="icon-wrap">
+            <i class="fa-regular fa-circle icon"></i>
+          </div>
+        </div>
+
+        <div class="stat-card completed">
+          <p class="title">Tamamlandı</p>
+          <h2 class="count">0</h2>
+          <div class="icon-wrap">
+            <i class="fa-solid fa-check icon"></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="new-task-section">
+        <input id="new-task-input" type="text" placeholder="Yeni tapşırıq əlavə edin..." />
+        <select id="new-task-difficulty-select">
+          <option value="1">Aşağı</option>
+          <option value="2">Orta</option>
+          <option value="3">Yüksək</option>
+        </select>
+        <button id="new-task-submit-btn">Əlavə et</button>
+        <button id="edit-task-submit-btn">Təsdiqlə</button>
+      </section>
+
+      <section class="filter-tasks-section">
+        <input id="search-task-input" type="text" placeholder="Tapşırıq axtar..." />
+        <button id="show-all-tasks-btn" class="active">Hamısı</button>
+        <button id="show-active-tasks-btn">Aktiv</button>
+        <button id="show-complete-tasks-btn">Tamamlandı</button>
+      </section>
+
+      <section class="displayed-tasks-section">
+        <div id="displayed-tasks-list"></div>
+        <div id="no-task-found">Heç bir tapşırıq tapılmadı</div>
+      </section>
     </div>
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/7a6f5a72c4.js" crossorigin="anonymous"></script>
