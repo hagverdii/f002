@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb812094-26f4-4d9e-9a77-17e9ac89e49f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/react-lab-15/components/Accordion/Accordion.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-lab-15/components/Accordion/AccordionItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-lab-15/components/Accordion/accordion.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smart-todo-app/src/components/Modal/Modal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/smart-todo-app/src/components/Toast/Toast.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +96,7 @@
       <workItem from="1761305714711" duration="2070000" />
       <workItem from="1762518520612" duration="1596000" />
       <workItem from="1765454111236" duration="611000" />
-      <workItem from="1765454743292" duration="778000" />
+      <workItem from="1765454743292" duration="11059000" />
     </task>
     <servers />
   </component>
