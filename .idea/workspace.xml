@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb812094-26f4-4d9e-9a77-17e9ac89e49f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/smart-todo-app/src/components/Modal/Modal.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/smart-todo-app/src/components/Toast/Toast.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-lab-16/src/components/Navbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-lab-16/src/context/SettingsContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-lab-16/src/pages/About.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/react-lab-16/src/pages/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +100,7 @@
       <workItem from="1761305714711" duration="2070000" />
       <workItem from="1762518520612" duration="1596000" />
       <workItem from="1765454111236" duration="611000" />
-      <workItem from="1765454743292" duration="11059000" />
+      <workItem from="1765454743292" duration="13625000" />
     </task>
     <servers />
   </component>
