@@ -1,0 +1,85 @@
+.shop-item {
+  width: 320px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-wrapper {
+  height: 220px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.image-wrapper.placeholder {
+  background: linear-gradient(135deg, #e0e0e0, #f0f0f0);
+}
+
+.item-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.item-category {
+  font-size: 12px;
+  padding: 4px 10px;
+  background: #eef2f6;
+  border-radius: 12px;
+  color: #444;
+}
+
+.item-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+}
+
+.add-button {
+  margin-top: 8px;
+  padding: 12px;
+  background: #0057b8;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: #00439a;
+}
+
+.plus {
+  font-size: 20px;
+  line-height: 1;
+}

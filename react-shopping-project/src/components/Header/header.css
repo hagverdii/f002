@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dcdcdc;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+}
+
+.icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e3f2fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-icon {
+  color: #1e88e5;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111111;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+}

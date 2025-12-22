@@ -1,0 +1,116 @@
+main {
+  .filters-row {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      text-decoration: none;
+      color: gray;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    button:first-of-type {
+      margin-left: auto;
+    }
+
+    button {
+      border-radius: 10px;
+      border: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid lightgray;
+      background: white;
+
+      &:hover {
+        cursor: pointer;
+        filter: brightness(90%);
+      }
+
+      &.active {
+        background: #0056a4;
+        color: white;
+      }
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    .left-part,
+    .right-part {
+      padding: 1.5rem;
+    }
+
+    .left-part .items-cart {
+      width: 100%;
+      min-height: 200px;
+      border: 1px solid lightgray;
+      border-radius: 16px;
+      padding: 1rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .items-cart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          font-size: 0.8rem;
+          background: #0056a4;
+          padding: 0.2rem;
+          min-width: 25px;
+          min-height: 25px;
+          border-radius: 9999px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+        }
+      }
+
+      .items-cart-empty {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        font-size: 0.9rem;
+      }
+    }
+
+    .right-part {
+      p {
+        color: gray;
+        font-size: 0.9rem;
+        margin-top: 0.4rem;
+        margin-bottom: 1rem;
+      }
+
+      .shop-items-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  main {
+    .container {
+      grid-template-columns: 2fr 5fr;
+
+      .right-part .shop-items-list {
+        justify-content: start;
+      }
+    }
+  }
+}
