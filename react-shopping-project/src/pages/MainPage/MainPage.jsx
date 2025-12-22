@@ -3,17 +3,13 @@ import "./mainPage.scss";
 import ShopItem from "../../components/ShopItem/ShopItem";
 import { CartContext } from "../../context/CartContext";
 import CartItem from "../../components/CartItem/CartItem";
+import { ItemsContext } from "../../context/ItemsContext";
 
 const MainPage = () => {
   const [filterCategories, setFilterCategories] = useState(["Hamısı", "Elektronika", "Təhsil"]);
   const [activeCategory, setActiveCategory] = useState(filterCategories[0] || "");
 
-  const [shopItemsList, setShopItemsList] = useState([
-    { id: 0, title: "Laptop", category: "Elektronika", price: 1200, image: null },
-    { id: 1, title: "Telefon", category: "Elektronika", price: 800, image: null },
-    { id: 2, title: "Kitab", category: "Təhsil", price: 25, image: null },
-    { id: 3, title: "Kamera", category: "Elektronika", price: 500, image: null },
-  ]);
+  const { shopItemsList, setShopItemsList } = useContext(ItemsContext);
 
   const { cartItemsList } = useContext(CartContext);
 
@@ -42,15 +38,18 @@ const MainPage = () => {
               )}
             </div>
             {cartItemsList.length > 0 ? (
-              cartItemsList.map((item) => (
-                <CartItem
-                  key={item.id + item.price}
-                  id={item.id}
-                  title={item.title}
-                  count={item.count}
-                  price={item.price}
-                />
-              ))
+              <div>
+                {cartItemsList.map((item) => (
+                  <CartItem
+                    key={item.id + item.price}
+                    id={item.id}
+                    title={item.title}
+                    count={item.count}
+                    price={item.price}
+                  />
+                ))}
+                <button className='add-button'>Sifarişi tanamla</button>
+              </div>
             ) : (
               <div className='items-cart-empty'>Məhsul yoxdur</div>
             )}

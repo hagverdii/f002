@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainPage from "./pages/MainPage/MainPage";
 import Header from "./components/Header/Header";
 import { CartProvider } from "./context/CartContext";
+import { ItemsProvider } from "./context/ItemsContext";
 
 const App = () => {
   return (
@@ -13,9 +14,11 @@ const App = () => {
           <Route
             path='/'
             element={
-              <CartProvider>
-                <MainPage />
-              </CartProvider>
+              <ItemsProvider>
+                <CartProvider>
+                  <MainPage />
+                </CartProvider>
+              </ItemsProvider>
             }
           />
         </Routes>

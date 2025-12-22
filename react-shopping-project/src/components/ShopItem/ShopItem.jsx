@@ -20,9 +20,7 @@ export default function ShopItem({ id, title = "Laptop", category = "Elektronika
         {
           id,
           title,
-          category,
           price,
-          image,
           count: 1,
         },
       ];
