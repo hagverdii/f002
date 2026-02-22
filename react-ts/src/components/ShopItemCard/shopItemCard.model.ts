@@ -1,8 +1,8 @@
 export interface ShopItemCardModel {
-  imageSrc?: string;
+  images?: string[];
+  id?: number;
   category?: string;
   title?: string;
-  colors?: string[];
   rating?: number;
   price?: number;
 }

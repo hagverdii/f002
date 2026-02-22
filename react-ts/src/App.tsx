@@ -1,19 +1,42 @@
-import "./App.css";
-import ShopItemCard from "./components/ShopItemCard/ShopItemCard";
+import { useEffect, useState } from "react";
+import { api } from "./service/api";
+import { Table } from "antd";
 
-function App() {
+const App = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      const response = await api.get("/products/");
+      setData(response?.data.products);
+    }
+
+    getData();
+  }, []);
+
+  const columns = [
+    {
+      title: "Title",
+      dataIndex: "title",
+      key: "title",
+    },
+    {
+      title: "Description",
+      dataIndex: "description",
+      key: "description",
+    },
+    {
+      title: "Category",
+      dataIndex: "category",
+      key: "category",
+    },
+  ];
+
   return (
-    <>
-      <ShopItemCard
-        imageSrc='https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f'
-        category='Headphones'
-        title='Polaroid Camera With Instant Print'
-        colors={["#000000", "#ffffff", "#ff0000"]}
-        rating={4.7}
-        price={199.99}
-      />
-    </>
+    <div>
+      <Table columns={columns} dataSource={data} />
+    </div>
   );
-}
+};
 
 export default App;
