@@ -30,8 +30,8 @@ const LoginPage: React.FC = () => {
           <form className='login-form' onSubmit={handleSubmit}>
             <div className='login-input-group'>
               <input
-                type='text'
-                placeholder='Email or Phone Number'
+                type='email'
+                placeholder='Email'
                 className='login-input'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
