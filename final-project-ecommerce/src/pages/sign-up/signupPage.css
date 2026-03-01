@@ -4,7 +4,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* --- Left: Image --- */
 .signup-image-side {
   flex: 0 0 45%;
   overflow: hidden;
@@ -17,7 +16,6 @@
   display: block;
 }
 
-/* --- Right: Form --- */
 .signup-form-side {
   flex: 1;
   display: flex;
@@ -45,7 +43,6 @@
   margin: 0 0 32px 0;
 }
 
-/* --- Inputs --- */
 .signup-form {
   display: flex;
   flex-direction: column;
@@ -78,7 +75,6 @@
   border-bottom-color: #000000;
 }
 
-/* --- Actions row --- */
 .signup-actions {
   display: flex;
   flex-direction: column;
@@ -126,16 +122,11 @@
   opacity: 0.75;
 }
 
-/* ================================
-   RESPONSIVE
-   ================================ */
-
 @media (max-width: 768px) {
   .signup-page {
     flex-direction: column;
   }
 
-  /* Hide image on small screens */
   .signup-image-side {
     flex: 0 0 260px;
   }

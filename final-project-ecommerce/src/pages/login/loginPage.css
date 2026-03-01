@@ -4,7 +4,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* --- Left: Image --- */
 .login-image-side {
   flex: 0 0 45%;
   overflow: hidden;
@@ -17,7 +16,6 @@
   display: block;
 }
 
-/* --- Right: Form --- */
 .login-form-side {
   flex: 1;
   display: flex;
@@ -45,7 +43,6 @@
   margin: 0 0 32px 0;
 }
 
-/* --- Inputs --- */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -78,7 +75,6 @@
   border-bottom-color: #000000;
 }
 
-/* --- Actions row --- */
 .login-actions {
   display: flex;
   align-items: center;
@@ -123,16 +119,11 @@
   opacity: 0.75;
 }
 
-/* ================================
-   RESPONSIVE
-   ================================ */
-
 @media (max-width: 768px) {
   .login-page {
     flex-direction: column;
   }
 
-  /* Hide image on small screens */
   .login-image-side {
     flex: 0 0 260px;
   }

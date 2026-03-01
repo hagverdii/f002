@@ -71,6 +71,6 @@
 @media (max-width: 480px) {
   .announcement-text {
     font-size: 0.7rem;
-    padding-right: 60px; /* prevent overlap with language selector */
+    padding-right: 60px;
   }
 }

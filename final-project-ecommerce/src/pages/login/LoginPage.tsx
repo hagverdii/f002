@@ -12,7 +12,6 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className='login-page'>
-      {/* Left: Image */}
       <div className='login-image-side'>
         <img
           src='https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80'
@@ -21,7 +20,6 @@ const LoginPage: React.FC = () => {
         />
       </div>
 
-      {/* Right: Form */}
       <div className='login-form-side'>
         <div className='login-form-wrapper'>
           <h1 className='login-title'>Log in to Exclusive</h1>

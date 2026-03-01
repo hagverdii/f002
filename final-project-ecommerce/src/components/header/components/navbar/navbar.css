@@ -92,10 +92,6 @@
   color: #000;
 }
 
-/* ================================
-   RESPONSIVE
-   ================================ */
-
 @media (max-width: 1024px) {
   .navbar-search-input {
     width: 120px;

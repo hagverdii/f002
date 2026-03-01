@@ -8,7 +8,6 @@ interface IconButtonProps {
   ariaLabel?: string;
 }
 
-// Reusable icon button with optional badge — badge shows only when count > 0
 const IconButton: React.FC<IconButtonProps> = ({ icon, count = 0, onClick, ariaLabel }) => {
   return (
     <button className='icon-btn' onClick={onClick} aria-label={ariaLabel}>
