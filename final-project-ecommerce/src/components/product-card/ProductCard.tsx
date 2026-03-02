@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/cartSlice";
 import { toggleWishlist, selectIsWishlisted } from "../../store/wishlistSlice";
 import { Link } from "react-router-dom";
+import { emitToast } from "../../utils/toast";
 
 const HeartIcon = ({ filled }: { filled: boolean }) => (
   <svg
@@ -74,6 +75,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   const handleAddToCart = () => {
     dispatch(addToCart({ id, name, image, price }));
+    emitToast({ message: "Added to cart", tone: "success" });
   };
 
   const handleWishlist = () => {

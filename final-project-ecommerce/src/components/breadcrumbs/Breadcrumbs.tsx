@@ -9,6 +9,7 @@ const ROUTE_LABELS: Record<string, string> = {
   login: "Login",
   signup: "Sign Up",
   products: "Products",
+  checkout: "Checkout",
 };
 
 const Breadcrumbs: React.FC = () => {

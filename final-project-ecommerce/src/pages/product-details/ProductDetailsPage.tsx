@@ -5,6 +5,7 @@ import "./productDetailsPage.css";
 import { PRODUCTS } from "../../data/products";
 import { addToCart } from "../../store/cartSlice";
 import { toggleWishlist, selectIsWishlisted } from "../../store/wishlistSlice";
+import { emitToast } from "../../utils/toast";
 
 const StarIcon = ({ filled }: { filled: boolean }) => (
   <svg width='16' height='16' viewBox='0 0 24 24' fill={filled ? "#FFAD33" : "none"} stroke='#FFAD33'>
@@ -41,6 +42,7 @@ const ProductDetailsPage: React.FC = () => {
 
   const handleAddToCart = () => {
     dispatch(addToCart({ id: product.id, name: product.name, image: image, price: product.price }));
+    emitToast({ message: "Added to cart", tone: "success" });
   };
 
   const handleWishlist = () => {

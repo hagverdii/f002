@@ -13,10 +13,13 @@ import ProductDetailsPage from "./pages/product-details/ProductDetailsPage.tsx";
 import Breadcrumbs from "./components/breadcrumbs/Breadcrumbs.tsx";
 import ProductsPage from "./pages/products/ProductsPage.tsx";
 import ScrollToTop from "./components/scroll-to-top/ScrollToTop.tsx";
+import CheckoutPage from "./pages/checkout/CheckoutPage.tsx";
+import ToastHost from "./components/toast/ToastHost.tsx";
 
 const App = () => {
   return (
     <div className='App'>
+      <ToastHost />
       <ScrollToTop />
       <Header />
       <Breadcrumbs />
@@ -28,6 +31,7 @@ const App = () => {
         <Route path='/about' element={<AboutPage />} />
         <Route path='/products' element={<ProductsPage />} />
         <Route path='/products/:id' element={<ProductDetailsPage />} />
+        <Route path='/checkout' element={<CheckoutPage />} />
         <Route path='/signup' element={<SignupPage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='*' element={<NotFoundPage />} />

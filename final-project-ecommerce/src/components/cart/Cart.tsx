@@ -11,6 +11,7 @@ import {
   decrementQuantity,
   clearCart,
 } from "../../store/cartSlice";
+import { Link } from "react-router-dom";
 
 const CloseIcon = () => (
   <svg
@@ -139,7 +140,9 @@ const Cart: React.FC = () => {
                 <span className='cart-total-label'>Total</span>
                 <span className='cart-total-value'>${total.toFixed(2)}</span>
               </div>
-              <button className='cart-checkout-btn'>Proceed to Checkout</button>
+              <Link className='cart-checkout-btn' to='/checkout' onClick={() => dispatch(closeCart())}>
+                Proceed to Checkout
+              </Link>
               <button className='cart-clear-btn' onClick={() => dispatch(clearCart())}>
                 Clear Cart
               </button>
