@@ -3,6 +3,7 @@ import "./ProductCard.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/cartSlice";
 import { toggleWishlist, selectIsWishlisted } from "../../store/wishlistSlice";
+import { Link } from "react-router-dom";
 
 const HeartIcon = ({ filled }: { filled: boolean }) => (
   <svg
@@ -67,7 +68,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
   discount,
   rating,
   reviewCount,
-  onQuickView,
 }) => {
   const dispatch = useDispatch();
   const wishlisted = useSelector(selectIsWishlisted(id));
@@ -81,12 +81,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
   };
 
   const filledStars = Math.round(rating);
+  const imageSrc =
+    image?.trim() ||
+    `https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80`;
 
   return (
     <div className='product-card'>
       <div className='product-card-image-wrap'>
         {discount && <span className='product-card-badge'>-{discount}%</span>}
-        <img src={image} alt={name} className='product-card-image' />
+        <Link to={`/products/${id}`} className='product-card-image-link' aria-label={`View ${name}`}>
+          <img src={imageSrc} alt={name} className='product-card-image' />
+        </Link>
 
         <button className='product-card-add-to-cart' onClick={handleAddToCart}>
           Add To Cart
@@ -100,18 +105,22 @@ const ProductCard: React.FC<ProductCardProps> = ({
           >
             <HeartIcon filled={wishlisted} />
           </button>
-          <button
+          <Link
+            to={`/products/${id}`}
             className='product-card-action-btn'
-            onClick={() => onQuickView?.(id)}
-            aria-label='Quick view'
+            aria-label='View details'
           >
             <EyeIcon />
-          </button>
+          </Link>
         </div>
       </div>
 
       <div className='product-card-info'>
-        <h3 className='product-card-name'>{name}</h3>
+        <h3 className='product-card-name'>
+          <Link to={`/products/${id}`} className='product-card-name-link'>
+            {name}
+          </Link>
+        </h3>
         <div className='product-card-pricing'>
           <span className='product-card-price'>${price}</span>
           {originalPrice && <span className='product-card-original-price'>${originalPrice}</span>}

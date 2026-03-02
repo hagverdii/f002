@@ -7,7 +7,6 @@ const Footer: React.FC = () => {
     <footer className='footer'>
       <div className='footer-container'>
         <div className='footer-grid'>
-          {/* Exclusive Column */}
           <div className='footer-column'>
             <h3 className='footer-logo'>Exclusive</h3>
             <h4 className='footer-subtitle'>Subscribe</h4>
@@ -20,7 +19,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Support Column */}
           <div className='footer-column'>
             <h4 className='footer-heading'>Support</h4>
             <ul className='footer-links'>
@@ -41,7 +39,6 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Account Column */}
           <div className='footer-column'>
             <h4 className='footer-heading'>Account</h4>
             <ul className='footer-links'>
@@ -73,7 +70,6 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Quick Link Column */}
           <div className='footer-column'>
             <h4 className='footer-heading'>Quick Link</h4>
             <ul className='footer-links'>
@@ -100,7 +96,6 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Download App Column */}
           <div className='footer-column'>
             <h4 className='footer-heading'>Download App</h4>
             <p className='footer-text app-text'>Save $3 with App New User Only</p>
@@ -146,7 +141,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className='footer-copyright'>
           <p>&copy; Copyright Rimel 2022. All right reserved</p>
         </div>

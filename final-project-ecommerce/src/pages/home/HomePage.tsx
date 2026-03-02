@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import "./homePage.css";
-import ProductCard, { ProductCardProps } from "../../components/product-card/ProductCard";
+import ProductCard from "../../components/product-card/ProductCard";
+import { PRODUCTS } from "../../data/products";
 
 interface SlideData {
   id: number;
@@ -72,58 +74,16 @@ const CATEGORIES = [
   "Health & Beauty",
 ];
 
-const FLASH_PRODUCTS: Omit<ProductCardProps, "onAddToCart" | "onWishlist" | "onQuickView">[] = [
-  {
-    id: 1,
-    name: "HAVIT HV-G92 Gamepad",
-    image: "https://images.unsplash.com/photo-1592840062661-a5a7f78e2056?w=400&q=80",
-    price: 120,
-    originalPrice: 160,
-    discount: 40,
-    rating: 5,
-    reviewCount: 88,
-  },
-  {
-    id: 2,
-    name: "AK-900 Wired Keyboard",
-    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&q=80",
-    price: 960,
-    originalPrice: 1160,
-    discount: 35,
-    rating: 4,
-    reviewCount: 75,
-  },
-  {
-    id: 3,
-    name: "IPS LCD Gaming Monitor",
-    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&q=80",
-    price: 370,
-    originalPrice: 400,
-    discount: 30,
-    rating: 5,
-    reviewCount: 99,
-  },
-  {
-    id: 4,
-    name: "S-Series Comfort Chair",
-    image: "https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=400&q=80",
-    price: 375,
-    originalPrice: 400,
-    discount: 25,
-    rating: 4,
-    reviewCount: 99,
-  },
-  {
-    id: 5,
-    name: "Beats Studio Headphones",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80",
-    price: 199,
-    originalPrice: 280,
-    discount: 25,
-    rating: 5,
-    reviewCount: 120,
-  },
-];
+const FLASH_PRODUCTS = PRODUCTS.slice(0, 12).map((product) => ({
+  id: product.id,
+  name: product.name,
+  image: product.images[0],
+  price: product.price,
+  originalPrice: product.originalPrice,
+  discount: product.discount,
+  rating: product.rating,
+  reviewCount: product.reviewCount,
+}));
 
 const useCountdown = (targetSeconds: number) => {
   const [seconds, setSeconds] = useState(targetSeconds);
@@ -299,21 +259,15 @@ const HomePage: React.FC = () => {
         <div className='home-product-carousel' ref={carouselRef}>
           {FLASH_PRODUCTS.map((product) => (
             <div className='home-product-carousel-item' key={product.id}>
-              <ProductCard
-                {...product}
-                onAddToCart={(id) => console.log("Add to cart:", id)}
-                onWishlist={(id) => console.log("Wishlist:", id)}
-                onQuickView={(id) => console.log("Quick view:", id)}
-              />
+              <ProductCard {...product} onQuickView={(id) => console.log("Quick view:", id)} />
             </div>
           ))}
         </div>
 
-        {/* View All */}
         <div className='home-view-all-wrap'>
-          <a href='#' className='home-view-all-btn'>
+          <Link to='/products' className='home-view-all-btn'>
             View All Products
-          </a>
+          </Link>
         </div>
       </section>
     </div>
