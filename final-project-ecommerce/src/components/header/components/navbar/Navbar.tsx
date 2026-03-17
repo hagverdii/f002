@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCartCount, toggleCart } from "../../../../store/cartSlice";
 import { selectWishlistCount, toggleWishlistDrawer } from "../../../../store/wishlistSlice";
 import { NavLink } from "react-router-dom";
+import { selectAuth } from "../../../../store/authSlice";
 
 const SearchIcon = () => (
   <svg
@@ -64,6 +65,8 @@ const Navbar: React.FC = () => {
   const dispatch = useDispatch();
   const cartCount = useSelector((state) => selectCartCount(state));
   const wishlistCount = useSelector((state) => selectWishlistCount(state));
+  const { isAuthenticated } = useSelector(selectAuth);
+
   const [search, setSearch] = useState("");
 
   const handleSearch = (e: React.FormEvent) => {
@@ -78,17 +81,20 @@ const Navbar: React.FC = () => {
       </NavLink>
 
       <ul className='navbar-links'>
-        {NAV_LINKS.map((link) => (
-          <li key={link.label}>
-            <NavLink
-              to={link.to}
-              end={link.to === "/"}
-              className={({ isActive }) => `navbar-link ${isActive ? "navbar-link--active" : ""}`}
-            >
-              {link.label}
-            </NavLink>
-          </li>
-        ))}
+        {NAV_LINKS.map((link) => {
+          if (isAuthenticated && (link.label === "Sign Up" || link.label === "Log in")) return;
+          return (
+            <li key={link.label}>
+              <NavLink
+                to={link.to}
+                end={link.to === "/"}
+                className={({ isActive }) => `navbar-link ${isActive ? "navbar-link--active" : ""}`}
+              >
+                {link.label}
+              </NavLink>
+            </li>
+          );
+        })}
       </ul>
 
       <div className='navbar-right'>

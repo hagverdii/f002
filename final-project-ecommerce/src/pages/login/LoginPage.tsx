@@ -1,14 +1,35 @@
 import React, { useState } from "react";
 import "./loginPage.css";
+// ── CHANGED: added Redux imports ──
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { AppDispatch } from "../../store/store"; // adjust path as needed
+import { loginUser, selectAuth } from "../../store/authSlice"; // adjust path as needed
+import { useNavigate } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { loading, error, isAuthenticated } = useSelector(selectAuth);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Login:", { email, password });
+    try {
+      await dispatch(loginUser({ username, password })).unwrap();
+      navigate("/");
+    } catch (e) {
+      console.error(e);
+    }
   };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      console.log("Login successful!");
+    }
+  }, [isAuthenticated]);
 
   return (
     <div className='login-page'>
@@ -28,11 +49,11 @@ const LoginPage: React.FC = () => {
           <form className='login-form' onSubmit={handleSubmit}>
             <div className='login-input-group'>
               <input
-                type='email'
-                placeholder='Email'
+                type='text'
+                placeholder='Username'
                 className='login-input'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
               />
             </div>
@@ -48,9 +69,11 @@ const LoginPage: React.FC = () => {
               />
             </div>
 
+            {error && <p className='login-error'>{error}</p>}
+
             <div className='login-actions'>
-              <button type='submit' className='login-btn'>
-                Log In
+              <button type='submit' className='login-btn' disabled={loading}>
+                {loading ? "Logging in..." : "Log In"}
               </button>
               <a href='/forgot-password' className='login-forgot'>
                 Forget Password?

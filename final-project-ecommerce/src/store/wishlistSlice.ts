@@ -1,1 +1,58 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";export interface WishlistItem {  id: number;  name: string;  image: string;  price: number;  originalPrice?: number;  discount?: number;  rating: number;  reviewCount: number;}interface WishlistState {  items: WishlistItem[];  isOpen: boolean;}const initialState: WishlistState = {  items: [],  isOpen: false,};const wishlistSlice = createSlice({  name: "wishlist",  initialState,  reducers: {    toggleWishlist(state, action: PayloadAction<WishlistItem>) {      const exists = state.items.find((i) => i.id === action.payload.id);      if (exists) {        state.items = state.items.filter((i) => i.id !== action.payload.id);      } else {        state.items.push(action.payload);      }    },    removeFromWishlist(state, action: PayloadAction<number>) {      state.items = state.items.filter((i) => i.id !== action.payload);    },    clearWishlist(state) {      state.items = [];    },    toggleWishlistDrawer(state) {      state.isOpen = !state.isOpen;    },    openWishlist(state) {      state.isOpen = true;    },    closeWishlist(state) {      state.isOpen = false;    },  },});export const {  toggleWishlist,  removeFromWishlist,  clearWishlist,  toggleWishlistDrawer,  openWishlist,  closeWishlist,} = wishlistSlice.actions;export const selectWishlistItems = (state) => state.wishlist.items;export const selectWishlistIsOpen = (state) => state.wishlist.isOpen;export const selectWishlistCount = (state) => state.wishlist.items.length;export const selectIsWishlisted = (id: number) => (state) => state.wishlist.items.some((i) => i.id === id);export default wishlistSlice.reducer;
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+export interface WishlistItem {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  originalPrice?: number;
+  discount?: number;
+  rating: number;
+  reviewCount: number;
+}
+interface WishlistState {
+  items: WishlistItem[];
+  isOpen: boolean;
+}
+const initialState: WishlistState = { items: [], isOpen: false };
+const wishlistSlice = createSlice({
+  name: "wishlist",
+  initialState,
+  reducers: {
+    toggleWishlist(state, action: PayloadAction<WishlistItem>) {
+      const exists = state.items.find((i) => i.id === action.payload.id);
+      if (exists) {
+        state.items = state.items.filter((i) => i.id !== action.payload.id);
+      } else {
+        state.items.push(action.payload);
+      }
+    },
+    removeFromWishlist(state, action: PayloadAction<number>) {
+      state.items = state.items.filter((i) => i.id !== action.payload);
+    },
+    clearWishlist(state) {
+      state.items = [];
+    },
+    toggleWishlistDrawer(state) {
+      state.isOpen = !state.isOpen;
+    },
+    openWishlist(state) {
+      state.isOpen = true;
+    },
+    closeWishlist(state) {
+      state.isOpen = false;
+    },
+  },
+});
+export const {
+  toggleWishlist,
+  removeFromWishlist,
+  clearWishlist,
+  toggleWishlistDrawer,
+  openWishlist,
+  closeWishlist,
+} = wishlistSlice.actions;
+export const selectWishlistItems = (state) => state.wishlist.items;
+export const selectWishlistIsOpen = (state) => state.wishlist.isOpen;
+export const selectWishlistCount = (state) => state.wishlist.items.length;
+export const selectIsWishlisted = (id: number) => (state) => state.wishlist.items.some((i) => i.id === id);
+export default wishlistSlice.reducer;
