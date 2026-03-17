@@ -4,7 +4,7 @@ import axios from "axios";
 const BASE_URL = "https://dummyjson.com";
 
 interface AuthState {
-  user: { email: string; id?: number } | null;
+  user: { email?: string; id?: number; name?: string } | null;
   token: string | null;
   loading: boolean;
   error: string | null;
