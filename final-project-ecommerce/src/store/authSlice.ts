@@ -1,11 +1,8 @@
-// authSlice.ts
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// ── CHANGED: axios instead of fetch ──
 import axios from "axios";
 
 const BASE_URL = "https://dummyjson.com";
 
-// ── CHANGED: TypeScript interfaces ──
 interface AuthState {
   user: { email: string; id?: number } | null;
   token: string | null;

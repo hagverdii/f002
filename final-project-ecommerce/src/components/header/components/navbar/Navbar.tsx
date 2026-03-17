@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./navbar.css";
 import IconButton from "../../../icon-button/IconButton";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCartCount, toggleCart } from "../../../../store/cartSlice";
 import { selectWishlistCount, toggleWishlistDrawer } from "../../../../store/wishlistSlice";
 import { NavLink } from "react-router-dom";
-import { selectAuth } from "../../../../store/authSlice";
+import { selectAuth, logout } from "../../../../store/authSlice";
 
 const SearchIcon = () => (
   <svg
@@ -62,6 +62,36 @@ const NAV_LINKS = [
 ];
 
 const Navbar: React.FC = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  const handleLogout = () => {
+    dispatch(logout());
+    setIsDropdownOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
   const dispatch = useDispatch();
   const cartCount = useSelector((state) => selectCartCount(state));
   const wishlistCount = useSelector((state) => selectWishlistCount(state));
@@ -123,6 +153,26 @@ const Navbar: React.FC = () => {
           ariaLabel='Cart'
           onClick={() => dispatch(toggleCart())}
         />
+        {isAuthenticated && (
+          <div className='navbar-user' ref={dropdownRef}>
+            <button
+              className='navbar-user-btn'
+              onClick={() => setIsDropdownOpen((prev) => !prev)}
+              aria-haspopup='true'
+              aria-expanded={isDropdownOpen}
+            >
+              ☰
+            </button>
+
+            {isDropdownOpen && (
+              <div className='navbar-dropdown' role='menu'>
+                <button className='navbar-dropdown-item' onClick={handleLogout} role='menuitem'>
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </nav>
   );

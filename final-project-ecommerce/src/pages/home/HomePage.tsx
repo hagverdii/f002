@@ -62,17 +62,13 @@ const SLIDES: SlideData[] = [
   },
 ];
 
-const CATEGORIES = [
-  "Woman's Fashion",
-  "Men's Fashion",
-  "Electronics",
-  "Home & Lifestyle",
-  "Medicine",
-  "Sports & Outdoor",
-  "Baby's & Toys",
-  "Groceries & Pets",
-  "Health & Beauty",
-];
+const CATEGORIES = Array.from(
+  new Set(
+    PRODUCTS.map((product, index) => {
+      if (index > 30) return product.category;
+    }),
+  ),
+);
 
 const FLASH_PRODUCTS = PRODUCTS.slice(0, 12).map((product) => ({
   id: product.id,
@@ -157,7 +153,7 @@ const HomePage: React.FC = () => {
       <div className='home-hero'>
         <aside className='home-sidebar'>
           {CATEGORIES.map((cat, i) => (
-            <a key={i} href='#' className='home-sidebar-link'>
+            <Link key={i} to={`/products?category=${encodeURIComponent(cat)}`} className='home-sidebar-link'>
               {cat}
               {(cat === "Woman's Fashion" || cat === "Men's Fashion") && (
                 <svg
@@ -171,7 +167,7 @@ const HomePage: React.FC = () => {
                   <polyline points='9 18 15 12 9 6' />
                 </svg>
               )}
-            </a>
+            </Link>
           ))}
         </aside>
 

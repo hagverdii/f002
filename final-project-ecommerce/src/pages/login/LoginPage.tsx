@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./loginPage.css";
-// ── CHANGED: added Redux imports ──
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { AppDispatch } from "../../store/store"; // adjust path as needed
-import { loginUser, selectAuth } from "../../store/authSlice"; // adjust path as needed
+import { AppDispatch } from "../../store/store";
+import { loginUser, selectAuth } from "../../store/authSlice";
 import { useNavigate } from "react-router-dom";
 
 const LoginPage: React.FC = () => {

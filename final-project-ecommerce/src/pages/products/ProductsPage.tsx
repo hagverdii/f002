@@ -2,24 +2,34 @@ import React, { useMemo, useState } from "react";
 import "./productsPage.css";
 import { PRODUCTS } from "../../data/products";
 import ProductCard from "../../components/product-card/ProductCard";
+import { useSearchParams } from "react-router-dom";
 
 const ProductsPage: React.FC = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState("All");
 
+  // ✅ Get categories from data
   const categories = useMemo(() => {
-    const unique = Array.from(new Set(PRODUCTS.map((product) => product.category)));
+    const unique = Array.from(new Set(PRODUCTS.map((p) => p.category)));
     return ["All", ...unique];
   }, []);
 
+  // ✅ Safe category from URL
+  const rawCategory = searchParams.get("category");
+  const category = categories.includes(rawCategory || "") ? rawCategory! : "All";
+
+  // ✅ Filtering logic
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
+
     return PRODUCTS.filter((product) => {
       const matchesCategory = category === "All" || product.category === category;
+
       const matchesQuery =
         normalized.length === 0 ||
         product.name.toLowerCase().includes(normalized) ||
         product.category.toLowerCase().includes(normalized);
+
       return matchesCategory && matchesQuery;
     });
   }, [query, category]);
@@ -31,18 +41,31 @@ const ProductsPage: React.FC = () => {
           <h1 className='products-page-title'>All Products</h1>
           <p className='products-page-subtitle'>{filtered.length} items</p>
         </div>
+
         <div className='products-page-controls'>
           <input
             className='products-page-search'
             type='search'
             placeholder='Search by product or category'
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(e) => setQuery(e.target.value)}
           />
+
           <select
             className='products-page-select'
             value={category}
-            onChange={(event) => setCategory(event.target.value)}
+            onChange={(e) => {
+              const value = e.target.value;
+
+              setSearchParams((prev) => {
+                if (value === "All") {
+                  prev.delete("category");
+                } else {
+                  prev.set("category", value);
+                }
+                return prev;
+              });
+            }}
           >
             {categories.map((item) => (
               <option key={item} value={item}>
