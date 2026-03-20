@@ -4,7 +4,7 @@ import IconButton from "../../../icon-button/IconButton";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCartCount, toggleCart } from "../../../../store/cartSlice";
 import { selectWishlistCount, toggleWishlistDrawer } from "../../../../store/wishlistSlice";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { selectAuth, logout } from "../../../../store/authSlice";
 
 const SearchIcon = () => (
@@ -64,6 +64,7 @@ const NAV_LINKS = [
 const Navbar: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const navigate = useNavigate(); // ✅ NEW
 
   const handleLogout = () => {
     dispatch(logout());
@@ -101,7 +102,13 @@ const Navbar: React.FC = () => {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Search:", search);
+    const trimmed = search.trim();
+    if (trimmed) {
+      navigate(`/products?query=${encodeURIComponent(trimmed)}`);
+    } else {
+      navigate("/products");
+    }
+    setSearch("");
   };
 
   return (

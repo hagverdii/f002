@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react"; // ✅ CHANGED: Removed useState
 import "./productsPage.css";
 import { PRODUCTS } from "../../data/products";
 import ProductCard from "../../components/product-card/ProductCard";
@@ -6,19 +6,17 @@ import { useSearchParams } from "react-router-dom";
 
 const ProductsPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [query, setQuery] = useState("");
 
-  // ✅ Get categories from data
   const categories = useMemo(() => {
     const unique = Array.from(new Set(PRODUCTS.map((p) => p.category)));
     return ["All", ...unique];
   }, []);
 
-  // ✅ Safe category from URL
   const rawCategory = searchParams.get("category");
   const category = categories.includes(rawCategory || "") ? rawCategory! : "All";
 
-  // ✅ Filtering logic
+  const query = searchParams.get("query") ?? "";
+
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
 
@@ -48,7 +46,18 @@ const ProductsPage: React.FC = () => {
             type='search'
             placeholder='Search by product or category'
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value;
+              // ✅ CHANGED: Writes to URL params instead of local state
+              setSearchParams((prev) => {
+                if (value.trim() === "") {
+                  prev.delete("query");
+                } else {
+                  prev.set("query", value);
+                }
+                return prev;
+              });
+            }}
           />
 
           <select
