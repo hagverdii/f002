@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
   const dispatch = useDispatch();
   const cartCount = useSelector((state) => selectCartCount(state));
   const wishlistCount = useSelector((state) => selectWishlistCount(state));
-  const { isAuthenticated } = useSelector(selectAuth);
+  const { isAuthenticated, user } = useSelector(selectAuth);
 
   const [search, setSearch] = useState("");
 
@@ -161,7 +161,8 @@ const Navbar: React.FC = () => {
               aria-haspopup='true'
               aria-expanded={isDropdownOpen}
             >
-              ☰
+              <span style={{ fontSize: "1rem", marginRight: ".5rem" }}>{user?.name || "User"}</span>
+              <span>☰</span>
             </button>
 
             {isDropdownOpen && (

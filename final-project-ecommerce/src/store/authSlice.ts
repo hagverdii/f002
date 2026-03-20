@@ -18,32 +18,37 @@ interface AuthCredentials {
 
 interface LoginResponse {
   token: string;
-}
-
-interface RegisterResponse {
   id: number;
-  token: string;
+  email: string;
+  firstName: string;
+  lastName: string;
 }
 
-export const loginUser = createAsyncThunk<{ token: string }, AuthCredentials, { rejectValue: string }>(
-  "auth/loginUser",
-  async ({ username, password }, { rejectWithValue }) => {
-    try {
-      const { data } = await axios.post<LoginResponse>(`${BASE_URL}/auth/login`, {
-        username,
-        password,
-      });
-      localStorage.setItem("userToken", data.token);
+export const loginUser = createAsyncThunk<
+  { token: string; id: number; email: string; name: string },
+  AuthCredentials,
+  { rejectValue: string }
+>("auth/loginUser", async ({ username, password }, { rejectWithValue }) => {
+  try {
+    const { data } = await axios.post<LoginResponse>(`${BASE_URL}/auth/login`, {
+      username,
+      password,
+    });
+    localStorage.setItem("userToken", data.token);
 
-      return { token: data.token };
-    } catch (err) {
-      if (axios.isAxiosError(err)) {
-        return rejectWithValue(err.response?.data?.error || "Login failed");
-      }
-      return rejectWithValue("Login failed");
+    return {
+      token: data.token,
+      id: data.id,
+      email: data.email,
+      name: `${data.firstName} ${data.lastName}`,
+    };
+  } catch (err) {
+    if (axios.isAxiosError(err)) {
+      return rejectWithValue(err.response?.data?.message || "Login failed");
     }
-  },
-);
+    return rejectWithValue("Login failed");
+  }
+});
 
 const initialState: AuthState = {
   user: null,
@@ -76,7 +81,11 @@ const authSlice = createSlice({
       .addCase(loginUser.fulfilled, (state, action) => {
         state.loading = false;
         state.token = action.payload.token;
-        state.user = { email: action.payload.email };
+        state.user = {
+          id: action.payload.id,
+          email: action.payload.email,
+          name: action.payload.name,
+        };
         state.isAuthenticated = true;
       })
       .addCase(loginUser.rejected, (state, action) => {
@@ -89,7 +98,6 @@ const authSlice = createSlice({
 export const { logout, clearError } = authSlice.actions;
 export default authSlice.reducer;
 
-// ── CHANGED: typed RootState selectors ──
 export const selectAuth = (state) => state.auth;
 export const selectToken = (state) => state.auth.token;
 export const selectIsAuthenticated = (state) => state.auth.isAuthenticated;
